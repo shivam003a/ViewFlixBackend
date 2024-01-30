@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    origin: "*",
+    origin: "https://magical-toffee-b7c191.netlify.app/",
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true
 }));
