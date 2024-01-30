@@ -81,6 +81,7 @@ exports.loginController = async(req, res)=>{
         res.cookie("viewflixtoken", token, {
             expires : new Date(Date.now() + 604800000),
             httpOnly: true,
+            secure: true,
             sameSite: "None"
         })
 
