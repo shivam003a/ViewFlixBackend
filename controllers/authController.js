@@ -80,7 +80,8 @@ exports.loginController = async(req, res)=>{
         const token = await emailExist.genAuthToken();
         res.cookie("viewflixtoken", token, {
             expires : new Date(Date.now() + 604800000),
-            httpOnly: true
+            httpOnly: true,
+            sameSite: "None"
         })
 
         emailExist.password = undefined;
