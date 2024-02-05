@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    origin: "https://vidnexa.netlify.app",
+    origin: process.env.CORS_ORIGIN,
     methods: ["GET", "PUT", "POST", "DELETE"],
     credentials: true
 }));
