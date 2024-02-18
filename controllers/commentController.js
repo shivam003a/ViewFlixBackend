@@ -4,8 +4,6 @@ exports.addComment = async(req, res)=>{
     try{
         const userId = req.user._id
         const {videoId, desc} = req.body
-        console.log(req.body)
-        console.log(videoId, desc)
 
         const comment = new Comment({
             userId, videoId, desc

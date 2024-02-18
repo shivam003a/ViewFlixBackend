@@ -8,7 +8,8 @@ const dbConnect = () => {
         console.log("connected!")
         
     }).catch((e) => {
-        console.log(e.message);
+        console.error(e.message);
+        throw e;
     })
 }
 

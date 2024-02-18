@@ -3,6 +3,7 @@ const bcrypt = require('bcrypt')
 const Video = require('../models/videoSchema')
 
 exports.updateUsers = async (req, res) => {
+    // Code Review
     if (req.params.id === req.user._id) {
         try {
             let response = await User.findByIdAndUpdate(req.params.id, {
@@ -125,7 +126,7 @@ exports.subscribeUser = async (req, res) => {
 
         const responseUser = await User.findByIdAndUpdate(req.user._id, {
             $push: { subscribedUsers: req.params.id }
-        }, { new: true })
+        }, { new: true }).select('-password').select('-token')
 
         await User.findByIdAndUpdate(req.params.id, {
             $inc: { subscribers: 1 }
@@ -149,7 +150,7 @@ exports.unsubscribeUser = async (req, res) => {
     try {
         const responseUser = await User.findByIdAndUpdate(req.user._id, {
             $pull: { subscribedUsers: req.params.id }
-        }, { new: true })
+        }, { new: true }).select('-password').select('-token')
 
         await User.findByIdAndUpdate(req.params.id, {
             $inc: { subscribers: -1 }

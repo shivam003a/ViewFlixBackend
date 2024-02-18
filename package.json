@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
+  "keywords": ["streaming", "video", "node"],
   "author": "",
   "license": "ISC",
   "dependencies": {
