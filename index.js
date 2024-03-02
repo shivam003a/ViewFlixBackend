@@ -23,7 +23,7 @@ app.use(cors({
 app.use(cookieParser({
     httpOnly: true,
     secure: true,
-    sameSite: 'strict'
+    sameSite: 'none'
 }));
 
 // default route
