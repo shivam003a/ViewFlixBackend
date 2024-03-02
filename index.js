@@ -21,7 +21,9 @@ app.use(cors({
     credentials: true
 }));
 app.use(cookieParser({
-    httpOnly: true
+    httpOnly: true,
+    secure: true,
+    sameSite: 'strict'
 }));
 
 // default route
